@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Role Seperation App</title>
+    <style>
+      .vertical {
+        display: flex;
+        flex-direction: column;
+      }
+      .horizontal {
+        display: flex;
+      }
+      .gap-1 {
+        gap: 10px;
+      }
+      .width-full {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical gap-1">
+      <div class="horizontal gap-1">
+        <div class="vertical width-full">
+          <h3>Template</h3>
+          <textarea id="inpt-template" rows="10">Test</textarea>
+        </div>
+        <div class="vertical width-full">
+          <h3>Groups</h3>
+          <textarea id="inpt-groups" rows=10"></textarea>
+        </div>
+      </div>
+      <button id="btn-reset-to-example">Reset to example</button>
+      <button id="btn-generate">Generate and save</button>
+      <p id="out-text"></p>
+      <button id="btn-copy" style="display: none;">Copy</button>
+    </div>
+    <script src="tokenize.js"></script>
+    <script src="infill.js"></script>
+    <script src="elements.js"></script>
+    <script src="groups.js"></script>
+    <script src="load.js"></script>
+    <script src="actions.js"></script>
+  </body>
+</html>
