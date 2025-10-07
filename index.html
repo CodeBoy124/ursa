@@ -4,30 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Universal Role Seperation App</title>
-    <style>
-      .vertical {
-        display: flex;
-        flex-direction: column;
-      }
-      .horizontal {
-        display: flex;
-      }
-      .gap-1 {
-        gap: 10px;
-      }
-      .width-full {
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="vertical gap-1">
-      <div class="horizontal gap-1">
-        <div class="vertical width-full">
+    <div class="flex flex-col gap-1">
+      <div class="flex gap-1 sm-flex-col">
+        <div class="flex flex-col width-full">
           <h3>Template</h3>
           <textarea id="inpt-template" rows="10">Test</textarea>
         </div>
-        <div class="vertical width-full">
+        <div class="flex flex-col width-full">
           <h3>Groups</h3>
           <textarea id="inpt-groups" rows=10"></textarea>
         </div>
@@ -37,6 +23,7 @@
       <p id="out-text"></p>
       <button id="btn-copy" style="display: none;">Copy</button>
     </div>
+    <script src="versioning.js"></script>
     <script src="tokenize.js"></script>
     <script src="infill.js"></script>
     <script src="elements.js"></script>

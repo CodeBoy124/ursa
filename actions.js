@@ -1,7 +1,5 @@
 btnResetToExample.addEventListener("click", () => {
-  localStorage.setItem("template", initial_template);
-  localStorage.setItem("groups", initial_groups);
-  updateScreen();
+  updateScreen(initial_template, initial_groups);
 });
 
 btnGenerate.addEventListener("click", () => {

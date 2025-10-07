@@ -1,0 +1,18 @@
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.gap-1 {
+  gap: 10px;
+}
+.width-full {
+  width: 100%;
+}
+
+@media screen and (width <= 600px) {
+  .sm-flex-col {
+    flex-direction: column;
+  }
+}

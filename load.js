@@ -5,6 +5,7 @@ Or even from a different group: {{second-group}}
 You can also link names, so this: {{second-group/1}}
 Can be linked to the following if you also use '/1': {{second-group/1}}
 Of course you can also link another name using '/2': {{first-group/2}} and {{first-group/2}}
+Finally, you might want to add people to multiple groups. You can do this by combining the groups names (view in the groups field)
 `.trim();
 
 const initial_groups = `
@@ -19,11 +20,16 @@ second-group
 >Obi-One
 >Yoda
 >Rex
+
+first-group
+second-group
+>Bill Gates
+>Mark Zuckerberg
 `.trim();
 
-function updateScreen() {
-  inptTemplate.value = localStorage.getItem("template");
-  inptGroups.value = localStorage.getItem("groups");
+function updateScreen(template, groups) {
+  inptTemplate.value = template ?? localStorage.getItem("template");
+  inptGroups.value = groups ?? localStorage.getItem("groups");
   parseGroups();
 }
 

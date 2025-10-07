@@ -2,17 +2,28 @@ let groups = {};
 
 function parseGroups() {
   groups = {};
-  let selectedGroup = null;
+  let selectedGroups = [];
+  let selectedGroupsPushMode = false;
   const lines = inptGroups.value
     .replace(/\r/g, "")
     .split("\n")
     .filter((line) => line.length != 0);
   for (const line of lines) {
     if (line[0] == ">") {
-      groups[selectedGroup].push(line.slice(1));
+      selectedGroupsPushMode = false;
+      for (let selectedGroup of selectedGroups) {
+        groups[selectedGroup].push(line.slice(1));
+      }
     } else {
-      groups[line] = [];
-      selectedGroup = line;
+      if (!groups.hasOwnProperty(line)) groups[line] = [];
+
+      if (selectedGroupsPushMode) {
+        selectedGroups.push(line);
+      } else {
+        selectedGroups = [line];
+      }
+
+      selectedGroupsPushMode = true;
     }
   }
 }
